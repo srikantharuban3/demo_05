@@ -1,0 +1,39 @@
+{
+  "name": "demo_05_test_suite",
+  "version": "1.0.0",
+  "description": "Test suite automation for demo_05 project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:html": "jest --reporters=default --reporters=jest-html-reporter"
+  },
+  "keywords": [
+    "testing",
+    "automation",
+    "ci-cd"
+  ],
+  "author": "srikantharuban3",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^3.10.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["text", "lcov", "html"],
+    "testMatch": ["**/tests/**/*.test.js"],
+    "reporters": [
+      "default",
+      ["jest-html-reporter", {
+        "pageTitle": "Test Report - Demo 05",
+        "outputPath": "test-report.html",
+        "includeFailureMsg": true,
+        "includeSuiteFailure": true
+      }]
+    ]
+  }
+}
